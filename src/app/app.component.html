@@ -1,1 +1,22 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">Sidenav content</mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button (click)="sidenav.toggle()" mat-icon-button color="" aria-label="Icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="logo" routerLink="">{{appName}}</span>
+      <span class="spacer"></span>
+      <a routerLink="login">Login</a>
+      <a routerLink="signup">Signup</a>
+      <a routerLink="training">Training</a>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

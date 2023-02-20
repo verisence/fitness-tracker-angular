@@ -1,1 +1,13 @@
+.spacer {
+  flex: 1 1 auto;
+}
 
+.logo {
+  cursor: pointer;
+}
+
+mat-sidenav,
+mat-sidenav-content,
+mat-sidenav-container {
+  height: 100%;
+}
