@@ -1,21 +1,57 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav role="navigation">Sidenav content</mat-sidenav>
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
+      <a mat-list-item routerLink="login" (click)="sidenav.close()">
+        <span matListItemIcon>
+          <mat-icon class="menu-icon">input</mat-icon>
+        </span>
+        <span matListItemTitle class="caption">Login </span>
+      </a>
+      <a mat-list-item class="list-item" routerLink="signup" (click)="sidenav.close()">
+        <span matListItemIcon>
+          <mat-icon class="menu-icon">face</mat-icon>
+        </span>
+        <span matListItemTitle class="caption">Signup</span>
+      </a>
+      <a mat-list-item routerLink="training" (click)="sidenav.close()">
+        <span matListItemIcon>
+          <mat-icon class="menu-icon">fitness_center</mat-icon>
+        </span>
+        <span matListItemTitle class="caption">Training</span>
+      </a>
+      <a mat-list-item (click)="sidenav.close()">
+        <span matListItemIcon>
+          <mat-icon class="menu-icon">eject</mat-icon>
+        </span>
+        <span matListItemTitle class="caption">Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button (click)="sidenav.toggle()" mat-icon-button color="" aria-label="Icon button with a menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span class="logo" routerLink="">{{appName}}</span>
-      <span class="spacer"></span>
-      <a routerLink="login">Login</a>
-      <a routerLink="signup">Signup</a>
-      <a routerLink="training">Training</a>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Icon-button with heart icon">
+      <div class="" fxHide.gt-xs>
+        <button (click)="sidenav.toggle()" mat-icon-button color="" aria-label="Icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="nav">
+        <span class="logo" routerLink="">{{appName}}</span>
+        <!-- <span class="spacer"></span> -->
+        <div fxHide.xs>
+          <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+            <li><a routerLink="login">Login</a></li>
+            <li><a routerLink="signup">Signup</a></li>
+            <li><a routerLink="training">Training</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
       </button>
       <button mat-icon-button class="example-icon" aria-label="Icon-button with share icon">
         <mat-icon>share</mat-icon>
-      </button>
+      </button> -->
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
